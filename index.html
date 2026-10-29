@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mahtab Foroozandeh, interaction designer and aspiring HCI researcher at Emily Carr University. Research on human–AI interaction, human-centered interaction and immersive experience.">
+<meta property="og:title" content="Mahtab Foroozandeh">
+<meta property="og:description" content="Mahtab Foroozandeh, interaction designer and aspiring HCI researcher at Emily Carr University. Research on human–AI interaction, human-centered interaction and immersive experience.">
+<meta property="og:image" content="https://mahforooz.github.io/img/portrait.jpg">
+<meta property="og:url" content="https://mahforooz.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%231f7a4f%22/%3E%3Ctext x=%2232%22 y=%2241%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-size=%2226%22 fill=%22white%22%3EMF%3C/text%3E%3C/svg%3E">
+<title>Mahtab Foroozandeh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Simplest: name + portrait on the left, three research questions set as large serif lines with project pills; image peeks on hover; drawers from the right. Light only. */
+:root{
+  color-scheme:light;
+  --bg:#f7faf8; --white:#ffffff; --gray-1:#f1f3f1; --gray-2:#e3e7e3; --line:#c3ccc5;
+  --ink:#141815; --ink-2:#4a544d; --ink-3:#86908a;
+  --green:#1f7a4f; --green-2:#165e3c; --green-soft:#e8f3ec; --green-line:#bcdcc9;
+  --amber:#8a5a00; --amber-soft:#fff7e6; --amber-line:#efd8a6;
+  --serif:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"Geist Mono", ui-monospace, Menlo, monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;background:var(--bg)}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+
+/* top-right menu */
+.menu{position:fixed;top:calc(22px + env(safe-area-inset-top,0px));right:max(28px,env(safe-area-inset-right,0px));z-index:20;display:flex;gap:22px;font-size:13.5px}
+.menu button,.menu a{color:var(--ink-2)}
+.menu button:hover,.menu a:hover{color:var(--green-2);text-decoration:none}
+.menu .sep{width:1px;background:var(--gray-2)}
+.menu{align-items:center}
+.menu .pri{position:relative;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--ink);padding:4px 0}
+.menu .pri::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;border-radius:2px;background:var(--green);transition:background .2s}
+.menu .pri:hover,.menu .pri:focus-visible{color:var(--green-2)}
+.menu .pri:hover::after,.menu .pri:focus-visible::after{background:var(--green-2)}
+.menu .pri .ico{width:22px;height:22px;border-radius:6px;background:var(--green);color:var(--white);display:grid;place-items:center;font-size:12px;font-weight:600;transition:transform .25s}
+.menu .pri:hover .ico{transform:translateY(2px)}
+.menu-pri{display:flex;gap:24px;align-items:center}
+
+/* stage */
+.stage{position:relative;height:100%;min-height:620px;display:grid;grid-template-columns:330px minmax(0,1fr);gap:56px;align-items:center;padding:84px max(40px,env(safe-area-inset-right,0px)) 56px max(56px,env(safe-area-inset-left,0px))}
+.who .pic{width:112px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px -26px rgba(20,40,28,.55);border:1px solid var(--gray-2)}
+.who .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block}
+.who h1{font-family:var(--serif);font-weight:400;font-size:54px;line-height:.98;letter-spacing:-.015em;margin:22px 0 12px}
+.who .role{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink-2)}
+.who p{margin:12px 0 0;color:var(--ink-2);font-size:14.5px;max-width:30ch}
+.who .edu{margin-top:14px;font-family:var(--sans);font-weight:500;font-size:14px;color:var(--green-2)}
+.gline{border:0;height:1.5px;background:var(--green);opacity:.55;margin:20px 0 16px;width:100%;max-width:300px}
+.social{display:flex;flex-wrap:wrap;gap:8px}
+.soc{display:inline-grid;place-items:center;width:38px;height:38px;padding:0;border-radius:50%;border:1px solid var(--green-line);background:var(--green-soft);color:var(--green-2);font-size:13px;font-weight:500;text-decoration:none;transition:background .2s,border-color .2s}
+.soc:hover{background:#d9ecdf;border-color:var(--green);text-decoration:none}
+.soc.todo{background:transparent;border-style:dashed;color:var(--ink-3);cursor:default}
+.who .hint{margin-top:28px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+
+.qs{list-style:none;margin:0;padding:0;max-width:760px}
+.qi{padding:30px 0;border-top:1px solid var(--green-line)}
+.qi:last-child{border-bottom:1px solid var(--green-line)}
+.qi .n{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-2)}
+.qi h2{margin:6px 0 14px;font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.12;letter-spacing:-.005em;text-wrap:balance}
+.qi h2 button{text-align:left;transition:color .2s}
+.qi h2 button:hover,.qi h2 button:focus-visible{color:var(--green-2)}
+.qi h2 em,.pin h2.qt em,.lane .q em{font-style:normal;color:inherit}
+.pin h2.qt{font-family:var(--serif);font-weight:400}
+.pl{display:flex;flex-wrap:wrap;gap:8px}
+.pl button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--green-line);background:var(--green-soft);border-radius:999px;padding:6px 14px 6px 10px;font-size:14px;color:var(--ink);transition:border-color .2s,background .2s}
+.pl button:hover,.pl button:focus-visible{border-color:var(--green-line);background:var(--green-soft)}
+.pl i{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.pl i.og{background:transparent;border:1.5px dashed var(--green)}
+.pl small{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.peek{display:none!important;position:fixed;z-index:15;width:240px;aspect-ratio:4/3;border-radius:12px;overflow:hidden;pointer-events:none;opacity:0;transform:translateY(6px) rotate(-1.5deg);transition:opacity .2s,transform .25s;box-shadow:0 24px 50px -28px rgba(20,40,28,.55);background:var(--gray-1)}
+.peek.on{opacity:1;transform:rotate(-1.5deg)}
+.peek img{width:100%;height:100%;object-fit:cover;display:block}
+.peek .ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;padding:14px;background:radial-gradient(circle at 30% 30%,var(--green-soft),var(--gray-1) 70%)}
+/* mobile */
+.mob{display:none}
+@media (max-width:900px), (max-height:560px){
+  .stage{display:none}
+  .menu{position:static;justify-content:flex-end;padding:calc(18px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px));gap:16px}
+  .mob{display:block;padding-block:20px 72px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));max-width:560px;margin:0 auto}
+  .mob .who{position:static;transform:none;width:auto}
+  .mob .who h1{font-size:46px}
+  .lane{position:relative;margin-top:44px;padding-left:28px}
+  .lane::before{content:"";position:absolute;left:6px;top:34px;bottom:6px;width:1.3px;background:var(--line);overflow:hidden}
+  .lane .head{display:flex;gap:8px;align-items:baseline;margin-left:-28px;margin-bottom:10px}
+  .lane .head .n{font-family:var(--mono);font-size:10.5px;color:var(--green-2);background:var(--green-soft);border:1px solid var(--green-line);border-radius:4px;padding:0 5px}
+  .lane .head .t{font-size:17px;font-weight:500}
+  .lane .q{font-family:var(--serif);font-style:normal;font-weight:400;font-size:21px;line-height:1.2;color:var(--ink);margin:0 0 6px}
+  .lane .it{position:relative;display:flex;flex-direction:column;width:100%;padding:10px 0}
+  .lane .it::before{content:"";position:absolute;left:-28px;top:calc(10px + 0.8em - 6.5px);margin-top:0;width:13px;height:13px;border-radius:50%;background:var(--green);border:1.6px solid var(--green)}
+  .lane .it .pt{font-weight:500}
+  .lane .it .py{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+  .lane .mp{display:none}
+  .lane:nth-of-type(2) .mp{animation-delay:-1.3s} .lane:nth-of-type(3) .mp{animation-delay:-2.6s}
+  @keyframes mp{0%{transform:translateY(0);opacity:0}10%{opacity:1}85%{opacity:1}100%{transform:translateY(calc(var(--h,200px)));opacity:0}}
+}
+
+/* drawer */
+.ov{position:fixed;inset:0;z-index:40}
+.scrim{position:absolute;inset:0;background:rgba(14,32,22,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);animation:fadein .25s forwards;opacity:0;cursor:pointer}
+.scrim-title{position:absolute;left:max(48px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);width:calc(100% - min(880px,100%) - 96px);color:#ffffff;font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,60px);line-height:1.05;letter-spacing:-.01em;pointer-events:none;opacity:0;animation:fadein .4s .15s forwards;text-wrap:balance}
+.scrim-title small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:12px}
+@media (max-width:1100px){.scrim-title{display:none}}
+@keyframes fadein{to{opacity:1}}
+.drawer{position:absolute;top:0;right:0;bottom:0;width:min(880px,100%);background:var(--white);border-left:1px solid var(--gray-2);box-shadow:-30px 0 80px -20px rgba(0,0,0,.35);overflow-y:auto;animation:slide .34s cubic-bezier(.2,.8,.2,1);padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@keyframes slide{from{transform:translateX(48px);opacity:0}}
+.bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:16px 20px 14px 32px;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--gray-1)}
+.bar .k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em}
+.bar .k button{color:var(--green-2)}
+.x{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink-2);border:1px solid var(--gray-2);text-align:center}
+.x:hover{border-color:var(--green-line);color:var(--green-2)}
+.pin{padding:28px 32px 48px}
+@media (max-width:560px){.pin{padding:22px 20px 40px}.bar{padding-left:20px}}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-2)}
+.pin h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,40px);line-height:1.08;margin:8px 0 10px;letter-spacing:-.005em;text-wrap:balance}
+.pin h2 em{font-style:italic}
+.pin .lede{color:var(--ink-2);max-width:56ch;margin:0 0 24px}
+.cards{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.card{display:grid;grid-template-columns:150px minmax(0,1fr);border-radius:14px;overflow:hidden;border:1px solid var(--gray-2);background:var(--white);transition:border-color .2s,transform .25s,box-shadow .25s}
+.card:hover{border-color:var(--green-line);transform:translateY(-2px);box-shadow:0 18px 30px -24px rgba(20,40,28,.4)}
+@media (max-width:480px){.card{grid-template-columns:minmax(0,1fr)}.card .thumb{aspect-ratio:16/9}}
+.thumb{position:relative;overflow:hidden;background:var(--gray-1);min-height:110px}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.thumb .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:12px;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);background:radial-gradient(circle at 30% 30%,var(--green-soft),var(--gray-1) 70%)}
+.thumb .st{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:10px;background:var(--white);border:1px solid var(--green-line);color:var(--green-2);border-radius:999px;padding:0 7px}
+.card .cb{padding:13px 16px 14px}
+.card .ct{font-weight:600;font-size:15.5px}
+.card .co{color:var(--ink-2);font-size:14px;margin-top:2px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tag{font-family:var(--mono);font-size:10.5px;color:var(--ink-2);background:var(--gray-1);border-radius:5px;padding:1px 7px}
+.hero{border-radius:14px;overflow:hidden;border:1px solid var(--gray-2);margin:6px 0 20px}
+.hero img{width:100%;display:block}
+.hero .ph{aspect-ratio:16/8;display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--ink-3);background:radial-gradient(circle at 30% 30%,var(--green-soft),var(--gray-1) 70%)}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.three div{background:var(--gray-1);border-radius:12px;padding:12px 13px;font-size:13.5px}
+.three b{display:block;font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);margin-bottom:3px}
+@media (max-width:560px){.three{grid-template-columns:minmax(0,1fr)}}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0}
+.lk{display:inline-flex;align-items:center;gap:6px;font-size:13px;border:1px solid var(--gray-2);border-radius:999px;padding:5px 12px;color:var(--ink-2)}
+.lk.todo{border-style:dashed;color:var(--ink-3)}
+details.full{margin-top:22px;border-top:1px solid var(--gray-2);padding-top:6px}
+details.full summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-weight:500}
+details.full summary::-webkit-details-marker{display:none}
+details.full summary span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);font-weight:400}
+details.full summary::after{content:"+";font-family:var(--mono);color:var(--green-2);font-size:16px}
+details.full[open] summary::after{content:"–"}
+.sec{display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid var(--gray-1);font-size:14.5px}
+.sec dt{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding-top:3px}
+.sec dt i{font-style:normal;color:var(--green-2);margin-right:6px}
+.sec dd{margin:0;min-width:0}
+.sec ul{margin:0;padding-left:18px}
+@media (max-width:560px){.sec{grid-template-columns:minmax(0,1fr);gap:2px}}
+.flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-family:var(--mono);font-size:11.5px;margin:6px 0}
+.flow span{border:1px solid var(--gray-2);border-radius:6px;padding:3px 8px;background:var(--white)}
+.flow span.c{border-color:var(--green-line);background:var(--green-soft)}
+.flow span.l{border-style:dashed}
+.flow i{font-style:normal;color:var(--ink-3)}
+.draft{border:1px solid var(--amber-line);background:var(--amber-soft);border-radius:8px;padding:6px 10px;font-size:13px;color:var(--ink-2);margin:4px 0}
+.draft b{font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin-right:6px}
+.note{font-size:13.5px;color:var(--ink-3);margin-top:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 20px}
+.chip{font-size:13px;border:1px solid var(--green-line);background:var(--green-soft);color:var(--green-2);border-radius:999px;padding:3px 11px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;padding:11px 0;border-top:1px solid var(--gray-1);font-size:14.5px}
+.tl .y{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);padding-top:2px}
+.tl .w{color:var(--ink-3);font-size:13.5px}
+@media (max-width:480px){.tl li{grid-template-columns:minmax(0,1fr);gap:0}}
+.dl-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);border-radius:999px;padding:9px 18px;font-weight:500;font-size:14px}
+.dl-btn:hover{background:var(--green-2);color:var(--white);text-decoration:none}
+.dl-btn.todo{background:var(--gray-1);color:var(--ink-3);border:1px dashed var(--line)}
+.copy{font-family:var(--mono);font-size:11.5px;border:1px solid var(--gray-2);border-radius:999px;padding:3px 10px;margin-left:8px;color:var(--ink-2);background:var(--white)}
+.mini h3{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 6px}
+/* writing-sample summary */
+.pin h2.wst{font-size:clamp(26px,3.4vw,32px);line-height:1.12}
+.wsby{font-family:var(--sans);font-weight:500;font-size:16px;color:var(--green-2);margin:0 0 16px;line-height:1.45}
+.wsintro{font-size:16px;color:var(--ink);margin:0 0 6px;max-width:58ch}
+.wsfig{margin:16px 0 22px}
+.wsfig img{background:#111}
+.wsvid video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.wsvid.sq{background:#0d0f0e}
+.wsvid.sq video{aspect-ratio:1;max-width:420px;margin:0 auto}
+.lk.real{border-color:var(--green-line);color:var(--green-2);font-weight:500;text-decoration:none}
+.lk.real:hover{background:var(--green-soft);text-decoration:none}
+.lk.priv{background:var(--gray-1);border-color:var(--gray-2);color:var(--ink-2)}
+.lk.priv svg{color:var(--green-2);flex:none}
+.wsfig figcaption{font-size:12.5px;color:var(--ink-3);padding:8px 12px;border-top:1px solid var(--gray-2);background:var(--white)}
+.wsh{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-2);margin:0 0 8px}
+.wsl{margin:0 0 20px;padding-left:18px;font-size:14.5px}
+.wsl li{margin:0 0 8px}
+.wsl li::marker{color:var(--green)}
+.wsl b{font-weight:600}
+.wsr{margin:0 0 22px;display:grid;gap:10px}
+.wsr div{background:var(--gray-1);border-radius:12px;padding:12px 14px}
+.wsr dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);margin-bottom:2px}
+.wsr dd{margin:0;font-size:14.5px}
+.wsbtn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);border-radius:999px;padding:10px 20px;font-weight:500;font-size:14.5px}
+.wsbtn:hover{background:var(--green-2);color:var(--white);text-decoration:none}
+.wsbtn span{transition:transform .2s}.wsbtn:hover span{transform:translateX(3px)}
+.wsnote{font-size:12.5px;color:var(--ink-3);margin:8px 0 0}
+#docv{position:fixed;inset:0;z-index:80;background:#e9eeea;overflow-y:auto;-webkit-user-select:none;user-select:none}
+#docv .docpages{max-width:880px;margin:0 auto;padding:calc(24px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 80px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:20px}
+#docv img{display:block;width:100%;height:auto;background:#fff;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 40px -26px rgba(20,40,28,.45);pointer-events:none}
+#docv .docx{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));z-index:2;width:40px;height:40px;border-radius:50%;background:var(--white);border:1px solid var(--gray-2);display:grid;place-items:center;text-align:center;font-size:15px;box-shadow:0 6px 18px -10px rgba(0,0,0,.4)}
+#docv .docx:hover{border-color:var(--green-line);color:var(--green-2)}
+@media print{#docv{display:none!important}}
+.wsmap{overflow-x:auto;margin:0 0 22px;border:1px solid var(--gray-2);border-radius:12px}
+.wsmap table{border-collapse:collapse;width:100%;font-size:14px}
+.wsmap th{text-align:left;font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);background:var(--green-soft);padding:9px 14px}
+.wsmap td{padding:10px 14px;border-top:1px solid var(--gray-2);vertical-align:top;width:50%}
+.wsmap td span{color:var(--green)}
+.wsgal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 22px}
+.wsgal figure{margin:0;border:1px solid var(--gray-2);border-radius:12px;overflow:hidden;background:var(--white)}
+.wsgal img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.wsgal figcaption{font-size:12.5px;color:var(--ink-3);padding:8px 10px;line-height:1.4}
+@media (max-width:640px){.wsgal{grid-template-columns:minmax(0,1fr)}}
+.code{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--white);border:1px solid var(--gray-2);border-radius:5px;padding:1px 7px;margin:2px 4px 2px 0}
+.wsdemo{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;align-items:start;margin:0 0 26px;padding:22px;border-radius:18px;background:var(--green-soft);border:1px solid var(--green-line)}
+.wsdemo .phone{border-radius:30px;overflow:hidden;background:#000;border:6px solid #111;box-shadow:0 24px 50px -28px rgba(20,40,28,.6)}
+.wsdemo video{display:block;width:100%;aspect-ratio:780/1686;background:#fff}
+.chap{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.chap button{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;width:100%;padding:9px 10px;border-radius:10px;text-align:left;transition:background .2s}
+.chap button:hover,.chap button:focus-visible{background:rgba(255,255,255,.7)}
+.chap button.on{background:var(--white);box-shadow:0 6px 16px -12px rgba(20,40,28,.5)}
+.chap .tc{font-family:var(--mono);font-size:12px;color:var(--green-2);padding-top:2px}
+.chap b{display:block;font-weight:600;font-size:14.5px}
+.chap .cd{display:block;font-size:13px;color:var(--ink-2);line-height:1.4}
+@media (max-width:640px){.wsdemo{grid-template-columns:minmax(0,1fr);padding:16px}.wsdemo .phone{max-width:260px;margin:0 auto}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.qlab,.pj{opacity:1}.draw .ln{stroke-dasharray:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<nav class="menu" aria-label="Site">
+  <span class="menu-pri"><button class="pri" data-open="about">About</button>
+  <button class="pri" data-open="cv">CV</button></span>
+  <button data-open="contact">Contact</button>
+</nav>
+
+<main>
+  <section class="stage" id="stage" aria-label="Research">
+    <div class="who">
+      <div class="pic"><img src="img/portrait.jpg" alt="Mahtab Foroozandeh"></div>
+      <h1>Mahtab<br>Foroozandeh</h1>
+      <div class="role">Interaction designer &amp; aspiring HCI researcher</div>
+      <div class="edu">BDes @ Emily Carr University</div>
+      <p>I build and study interactive systems across AI, XR and tangible interfaces.</p>
+      <hr class="gline">
+      <div class="social">
+        <a class="soc" href="https://www.linkedin.com/in/mahtab-foroozandeh/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="8" y="11.6" text-anchor="middle" font-family="Geist,system-ui,sans-serif" font-size="8.2" font-weight="700" fill="currentColor">in</text></svg></a>
+        <a class="soc" href="https://github.com/mahforooz" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+        <a class="soc" href="mailto:mahforooz81@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m2.2 4.4 5.8 4.4 5.8-4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
+      </div>
+      
+    </div>
+    <ol class="qs" id="qs"></ol>
+  </section>
+
+  <section class="mob" id="mob" aria-label="Mahtab Foroozandeh">
+    <div class="who">
+      <div class="pic"><img src="img/portrait.jpg" alt="Mahtab Foroozandeh"></div>
+      <h1>Mahtab<br>Foroozandeh</h1>
+      <div class="role">Interaction designer &amp; aspiring HCI researcher</div>
+      <div class="edu">BDes @ Emily Carr University</div>
+      <p>I build and study interactive systems across AI, XR and tangible interfaces.</p>
+      <hr class="gline">
+      <div class="social">
+        <a class="soc" href="https://www.linkedin.com/in/mahtab-foroozandeh/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="8" y="11.6" text-anchor="middle" font-family="Geist,system-ui,sans-serif" font-size="8.2" font-weight="700" fill="currentColor">in</text></svg></a>
+        <a class="soc" href="https://github.com/mahforooz" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+        <a class="soc" href="mailto:mahforooz81@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m2.2 4.4 5.8 4.4 5.8-4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div id="lanes"></div>
+  </section>
+</main>
+<div class="peek" id="peek" aria-hidden="true"></div>
+
+<div class="ov" id="ov" hidden>
+  <div class="scrim" id="scrim"></div>
+  <div class="scrim-title" id="scrimTitle" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="pTitle">
+    <div class="bar"><span class="k" id="crumb"></span><button class="x" id="close" aria-label="Close">✕</button></div>
+    <div class="pin" id="pin"></div>
+  </aside>
+</div>
+
+<script>
+const D=t=>`<div class="draft"><b>to write</b>${t}</div>`;
+const Q={
+ q1:{n:"Q1",short:"Human–AI interaction",text:"How can AI tools support thinking <em>without replacing it?</em>",lede:"What people hand over to AI chatbots, what that does to memory and critical thinking, and how to design AI that keeps people thinking."},
+ q2:{n:"Q2",short:"Immersive experience",text:"How can immersive experiences carry <em>emotional and embodied</em> understanding?",lede:"Games and XR that let people move through an experience instead of reading about it."},
+ q3:{n:"Q3",short:"Human-centered interaction",text:"How can physical and wearable interfaces respond to <em>how people actually feel and behave?</em>",lede:"Pressure, touch and a glance at a watch, designed for moments when people are anxious, busy or unwell."}
+};
+const P=[
+ {id:"thinking-with-ai",q:"q1",st:"ongoing",t:"Thinking with AI",y:"2026–27",img:"img/thinking-dial-levels.svg",
+  one:"Graduation research: a dial that lets people choose how much of the thinking AI does.",tags:["Research proposal","Wizard-of-Oz","Mixed-methods"],
+  ws:{title:"User-Adjustable Levels of AI Involvement to Sustain Human Cognitive Engagement",
+   by:"Graduation research proposal · Emily Carr University · 2026–27",
+   intro:"Most AI tools offer one fixed level of help: you ask, it answers, you accept. I propose a dial that lets people set how much of the thinking the AI does, and a study of whether that keeps them engaged without making AI impractical.",
+   head:"Approach",
+   items:[["Three levels, defined by who reasons and who checks.","<em>AI leads</em>, <em>AI checks with me</em> and <em>I lead</em>, mapped onto established levels-of-automation research."],
+          ["Consented vigilance probes.","Users can opt in to occasional harmless, planted errors that keep them monitoring the AI. Every probe is disclosed afterwards."],
+          ["Beyond the screen.","Voice, a tangible wearable control (an earbud dial or a ring) and an on-screen baseline are compared before one is built."]],
+   rows:[["Study plan","Interviews and a one-week diary study with 6–8 people, then a controlled Wizard-of-Oz study with 32 participants (3 × 2 mixed design) measuring accuracy, over-reliance, retention, workload and trust."],
+         ["Key idea","The interventions that make people think hardest are the ones they like least, so the dial offers choice instead of imposed friction."]],
+   cap:"The three levels of the Thinking Dial (Figure 1 of the proposal).",
+   href:"reports/thinking-dial-proposal.html",doc:{dir:"reports/dial-pages",n:10},label:"Read the full proposal"},
+  three:[["Question","How can AI tools support thinking without replacing it?"],["Method","Interviews, diary studies, participatory sessions."],["Next","Prototype testing, Winter 2027."]],
+  links:[["Study protocol",1]],
+  full:[["Context","Emily Carr University · Supervisors: Dr. Manuhuia Barcham, Eugenia Bertulis."+D("precedents and the gap this addresses")],["Method","Interviews, diary studies and participatory sessions; prototype testing in Winter 2027. Ethics: TCPS 2: CORE."],["Built","A prototype designed from first-phase findings."],["Evaluation","Prototype testing planned for Winter 2027."],["Findings","Fieldwork in progress."+D("early themes as they emerge")],["Open questions",D("what stays open after the project")]]},
+ {id:"persustain",q:"q1",t:"Persustain",y:"2026",img:"img/persustain-cover.jpg",
+  one:"Carbon estimates where code computes every number and the LLM only explains it.",tags:["TypeScript","Firebase","OpenAI API","Climatiq API"],
+  ws:{kind:"Case study",title:"Persustain",
+   by:"AI/ML Developer · ISM Creatives · Jan – May 2026",
+   intro:"Persustain helps people understand the environmental impact of their daily habits. I built the backend AI pipeline around one question: how can AI communicate impact in ways that non-experts find understandable and trustworthy?",
+   cap:"Persustain on mobile.",
+   lists:[["What I built",[
+     ["A deterministic core.","Every emissions number comes from rule-based emission factors and the Climatiq API, never from the language model."],
+     ["AI as an interpretive layer.","GPT-4.1-mini writes explanations, summaries, recommendation rationales and assumption notes. JSON-schema outputs, validated choices and full audit logging guard against hallucination."],
+     ["Net-impact semantics.","Tracking actual, avoided and net CO₂ (net = actual − avoided), so cycling instead of driving shows as a reduction against the user’s baseline."],
+     ["User-scoped aggregation.","Multi-user rollups were returning stale data from other users. I scoped queries, cache keys and refresh behaviour to each user so aggregates stayed isolated and predictable."]]]],
+   map:{plain:1,head:"Where the line sits",cols:["Computed in code","Written by the LLM"],rows:[["Baselines and activity math","Explanations and summaries"],["Aggregation and trends","Recommendation rationales"],["Stored totals users can trace","Notes on assumptions"]]},
+   rows:[["Core services",`<span class="code">normalizeAndExplainActivity</span> <span class="code">generateBaselineInsight</span> <span class="code">generatePatternInsights</span> <span class="code">generateEvidencePackSummary</span> <span class="code">recommendProjectAndGoals</span>`],
+         ["Stack","TypeScript · Node.js · Firebase Cloud Functions (2nd gen) · Firestore · OpenAI API · Climatiq API · Zod"],
+         ["Outcome","An MVP with onboarding baselines, activity normalization, AI insights, contribution aggregation, recommendations and a user-scoped dashboard. Results are labelled as estimates, with caveats and confidence levels."],
+         ["Key insight","Backend decisions are UX decisions. The emissions logic and aggregation shaped how people read their impact, how far they trusted it, and how their habits felt to them."]],
+   links:[["Private repository · ISM Creatives. Code walkthrough available on request.","private"]]}},
+ {id:"autolume",q:"q1",t:"Autolume evaluation",y:"2026",img:"img/autolume-perform.png",
+  one:"A heuristic evaluation of how a generative-AI art tool explains what its models are doing.",tags:["Heuristic evaluation","Human–AI guidelines","Source-code review"],
+  ws:{title:"Making the Latent Legible: A Heuristic Evaluation of Autolume",
+   by:"UX Researcher &amp; Interaction Designer (volunteer) · Metacreation Lab for Creative AI, SFU · 2026",
+   intro:"Autolume lets artists train and perform with their own generative AI models without writing code. I evaluated how well its interface tells users what those models are doing.",
+   head:"Method",
+   items:[["A framework built for generative tools.","I combined five principles from human–AI interaction research (transparency, control, trust calibration, unpredictability and feedback) with Nielsen’s heuristics as a usability baseline."],
+          ["Proto-personas to weight severity.","Four profiles, from first-time workshop participant to live performer, were used to rate each problem on Nielsen’s 0–4 scale."],
+          ["Checked against the source code.","I verified every claim about the tool’s behaviour against its documentation and code. That step corrected three of my own initial findings."]],
+   rows:[["Outcome","17 usability problems (2 major), 7 strengths to keep and 5 prioritized recommendations, which I presented to the development team."],
+         ["Key insight","Much of the guidance users need already exists in Autolume’s documentation. It just isn’t shown where they make decisions."]],
+   cap:"The Perform screen of the evaluated build, annotated with findings.",
+   href:"reports/autolume-report.html",doc:{dir:"reports/autolume-pages",n:17},label:"Read the full report"}},
+ {id:"endless-journey",q:"q2",t:"The Endless Journey",y:"2025",img:"img/endless-journey-environment-1.jpg",
+  one:"A narrative game about forced migration, built in Unity from interviews.",tags:["Unity 6.2","HDRP","C#","Interviews"],
+  ws:{kind:"Case study",title:"The Endless Journey",
+   by:"Solo designer &amp; developer · Core Design Studio III, Emily Carr University · Sep – Dec 2025",
+   intro:"A PC narrative survival game about a young Syrian refugee who loses consciousness crossing a border and wakes in an unfamiliar, symbolic world. It asks how game mechanics, rather than exposition, can carry the emotional experience of displacement.",
+   cap:"Act II. The survival HUD tracks emotional stability and calories.",
+   video:{src:"media/endless-journey-intro.mp4",poster:"media/endless-journey-intro-poster.jpg",cap:"Opening cinematic (Act I), built with Cinemachine and Timeline. 52 seconds, with sound."},
+   lists:[["Method",[
+     ["Interviews and documentary research.","Semi-structured interviews with two immigrants about displacement and adaptation, alongside documentaries and articles on refugee experiences."],
+     ["Insight-to-mechanic mapping.","Each recurring theme became a system the player feels rather than reads about."]]]],
+   map:{head:"From research insight to mechanic",cols:["What I heard","What the player experiences"],rows:[
+     ["Emotional instability after migration","An emotional-health meter that slowly drains"],
+     ["Isolation intensifies uncertainty","Sparse environments and distant NPCs"],
+     ["Connection supports recovery","Talking to NPCs restores emotional health"],
+     ["Fear of unfamiliar places","Fog-heavy, atmospheric world design"],
+     ["Constant movement is exhausting","Exploring burns calories; foraging restores them"]]},
+   lists2:[["What I built",[
+     ["Unity 6.2 with HDRP","for cinematic lighting and atmospheric depth."],
+     ["Gameplay systems in C#:","player controller, emotional health, calorie depletion, inventory, NPC interaction and movement, environmental audio and UI."],
+     ["Cinemachine and Timeline","for the opening cinematic, pacing, and an unstable camera in stressful moments."],
+     ["Acts I and II are playable.","Act III, the arrival, is designed but not implemented."]]]],
+   rows:[["Challenge","Shortly before playtesting, Unity crashed and incomplete backups lost large parts of the project. I rebuilt it under time pressure, choosing emotional experience over feature count."],
+         ["Key insight","Mechanics can communicate emotion: depletion reads as exhaustion, open space as relief, and connection as recovery."],
+         ["Next","Adaptive emotional systems, richer NPC interaction, and a VR version with spatial audio and embodied navigation."]],
+   gallery:[["img/endless-journey-gameplay-1.jpg","Inventory and gathering, kept minimal to preserve immersion."],["img/endless-journey-narrative-1.jpg","Open landscapes give temporary relief after dense forest."],["img/endless-journey-technical-1.jpg","The AI_Movement C# script that drives NPC wandering."]],
+   links:[["Unity project on GitHub","https://github.com/mahforooz/GameDesignProject"]]}},
+ {id:"bull-capital",q:"q2",t:"From Persepolis to Paris",y:"2024",img:"img/bull-capital-gallery.jpg",
+  one:"A walkable WebVR memory palace tracing a Persian artifact’s journey from Persepolis to the Louvre.",tags:["Blender","A-Frame / WebXR","Meta Quest","User testing"],
+  ws:{kind:"Case study",title:"From Persepolis to Paris: The Journey of the Achaemenid Bull Capital",
+   by:"3D modelling &amp; WebXR development · INTD-218 3D Modelling for Mixed Realities, Emily Carr University · with Dorsa Nazarimanesh · 2024",
+   intro:"The Achaemenid Bull Capital once crowned a column in the royal audience hall at Persepolis. Today it stands in the Louvre, far from the place that gave it meaning. We asked how a museum object’s history can be experienced in space rather than read on a wall label, and built a walkable WebVR “memory palace” that runs in the browser and in a Meta Quest.",
+   cap:"Inside the pyramid gallery: the Bull Capital at the centre, surrounded by four story panels.",
+   video:{src:"media/bull-capital-walkthrough.mp4",poster:"img/bull-capital-gallery.jpg",square:1,cap:"Walkthrough of the original build, from the Louvre courtyard into the pyramid gallery. A phone recording of the screen; the project files were later lost."},
+   lists:[["Concept",[
+     ["Why this object.","It joins engineering and symbolism: it physically held up a roof and symbolically held up an empire."],
+     ["Design as memory.","The walk from courtyard to gallery echoes the object’s own journey from Persia to Paris. Stone textures, warm museum lighting and Persian carpet patterns set a calm, reverent mood."],
+     ["Research.","Louvre archives, articles on Achaemenid symbolism, Persepolis excavation records and 3D scans of the capital used as modelling references."],
+     ["Four story panels,","researched and designed by Dorsa in a newspaper style: Designing Power · The Twin Guardians · Journey Through Time (518 BCE → 330 BCE → 20th-century excavation → Paris) · Legacy: Design as Memory."]]],
+    ["What I built",[
+     ["The Bull Capital in Blender:","the twin bull heads, column shaft and volute base, using mirror and array modifiers for symmetry and sculpting facial details from historical references. Optimized for the web and exported as .glb."],
+     ["The Louvre and the carpets in Blender:","the museum courtyard and glass pyramid that frame the walk, and the Persian carpets that set the gallery’s mood."],
+     ["The experience in A-Frame:","the pavilion, the capital at its centre, ambient light plus a directional “spotlight”, and first-person movement on desktop and in a VR headset."]]]],
+   map:{head:"Headset testing → what we changed",cols:["What classmates found in Meta Quest","Change"],rows:[
+     ["The gallery felt too dark","Brightened the lighting"],
+     ["Panel text was hard to read in the headset","Enlarged the panels"],
+     ["The capital felt off-centre in the space","Re-centred it"],
+     ["Camera movement was uncomfortable","Smoothed the movement for comfort"]]},
+   rows:[["My role","I 3D modelled the Louvre, the Bull Capital and the carpets, and built the experience in A-Frame. Dorsa Nazarimanesh led the historical research and designed the four panels."],
+         ["Challenges","Balancing visual quality against WebVR performance, getting the scale right in VR, and writing panel text that was accurate but still engaging."],
+         ["Next study","Does walking an object’s journey in VR help people remember its history better than reading the same panels on a wall? A small recall study comparing the two would test the memory-palace idea."]]}},
+ {id:"healthsync",q:"q3",t:"HealthSync AI",y:"2025",img:"img/healthsync-watch.jpg",
+  one:"Calmer mobile and Apple Watch interfaces for people managing diabetes.",tags:["Interviews","Apple Watch","Figma","Human-centred AI"],
+  ws:{kind:"Case study",title:"HealthSync AI",
+   by:"UX Researcher &amp; Designer · ISM Creatives · 3-person team · Fall 2025",
+   intro:"An MVP health platform for people managing chronic conditions such as diabetes. It explores how AI can turn wearable data into calm, understandable guidance for patients, caregivers and clinicians, instead of more charts and alarms.",
+   cap:"Apple Watch companion: morning snapshot, quick log, nudge and escalation alerts.",
+   demo:{src:"media/healthsync-demo.mp4",poster:"media/healthsync-demo-poster.jpg",head:"Main user flow · 1:37",
+     chapters:[[0,"Welcome","First launch and trust building."],[4,"Device setup","Pairing an Apple Watch and a glucose monitor."],[8,"Care circle","Adding a daughter, a nurse and a home-care nurse, with roles."],[20,"Morning snapshot","Glucose at a glance, a short mobility check and last night’s sleep."],[32,"Today’s summary","Logged actions and updates shared with caregivers."],[44,"Weekly insights","AI-detected patterns explained in plain language."],[58,"Monthly report","Time in range, adherence and achievements."],[83,"Send a nudge","A caregiver sends a gentle, templated check-in."]]},
+   lists:[["Research",[
+     ["Interviews","with 3 people living with diabetes."],
+     ["Heuristic and competitive analysis","of Apple Health, Fitbit, Oura and MyChart."],
+     ["Secondary research","on chronic-illness self-monitoring, remote patient monitoring, alert fatigue, and trust in AI."]]]],
+   map:{head:"From finding to design decision",cols:["Finding","Design response"],rows:[
+     ["Healthcare is emotional","Calm by default: soft visuals and no clinical alarms for routine changes"],
+     ["Users need guidance, not more data","The AI explains a pattern in plain language and suggests one small action, such as hydration or a short walk"],
+     ["Alert fatigue erodes trust","Progressive escalation: nudges first, alerts only as severity rises"],
+     ["Care is collaborative","A care circle where caregivers and clinicians share context, with permissions"]]},
+   rows:[["My role","Collaborated on research; independently designed the mobile and Apple Watch interfaces, AI interaction patterns, escalation flows, reporting dashboards and the interactive prototype."],
+         ["Outcome","A fully interactive hi-fi prototype and research-informed design specifications for development handoff."],
+         ["Key insight","Trust in health AI comes from tone and clarity as much as features. The AI was designed to support, contextualize and guide, never to diagnose."]],
+   gallery:[["img/healthsync-mocks.jpg","Mobile: dashboard, weekly insights, monthly report and suggested actions."],["img/healthsync-journey-maps.jpg","Journey maps for patient onboarding and caregiver connection."],["img/healthsync-outcome-5.jpg","Escalation: high-risk alert, intervention timeline and post-call summary."]],
+   links:[["Try the interactive prototype (Figma)","https://www.figma.com/proto/o0JY7TpMlZA62jr2g4BWDw/HealthSync-AI---Prototype?node-id=82-151&page-id=82%3A150&starting-point-node-id=82%3A151&t=BMClTmsMBcDYMkBz-1"]]}}
+];
+
+const $=s=>document.querySelector(s);
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const NS="http://www.w3.org/2000/svg";
+const QIDS=["q1","q3","q2"];
+const plain=t=>t.replace(/<[^>]+>/g,"");
+
+/* ---------- desktop questions ---------- */
+$("#qs").innerHTML=QIDS.map(qid=>{ const q=Q[qid];
+  return `<li class="qi"><div class="n">${q.short}</div><h2><button data-open="${qid}">${q.text}</button></h2>
+  <div class="pl">${P.filter(p=>p.q===qid).map(p=>`<button data-proj="${p.id}"><i class="${p.st?"og":""}"></i>${p.t}<small>${p.y}</small></button>`).join("")}</div></li>`; }).join("");
+const peek=$("#peek");
+document.querySelectorAll("[data-peek]").forEach(b=>{
+  b.addEventListener("mouseenter",()=>{ const p=P.find(x=>x.id===b.dataset.peek); peek.innerHTML=p.img?`<img src="${p.img}" alt="">`:`<span class="ph">${p.ph}</span>`; const r=b.getBoundingClientRect(); const lx = r.right+16+240 < innerWidth ? r.right+16 : Math.max(8, r.left-256); peek.style.left=lx+"px"; peek.style.top=Math.max(8, Math.min(innerHeight-190, r.top+r.height/2-90))+"px"; peek.classList.add("on"); });
+  b.addEventListener("mouseleave",()=>peek.classList.remove("on"));
+});
+function cold(){ peek.classList.remove("on"); }
+
+/* ---------- mobile lanes ---------- */
+$("#lanes").innerHTML=QIDS.map(qid=>{ const q=Q[qid]; return `<div class="lane">
+  <button class="head" data-open="${qid}"><span class="t">${q.short}</span></button>
+  <p class="q">${plain(q.text)}</p>
+  ${P.filter(p=>p.q===qid).map(p=>`<button class="it ${p.st?"ongoing":""}" data-proj="${p.id}"><span class="pt">${p.t}</span><span class="py">${p.y}${p.st?" · ongoing":""}</span></button>`).join("")}</div>`; }).join("");
+document.querySelectorAll(".lane").forEach(l=>l.style.setProperty("--h",(l.offsetHeight-40)+"px"));
+
+/* ---------- panels ---------- */
+const card=p=>`<button class="card" data-proj="${p.id}"><span class="thumb">${p.img?`<img src="${p.img}" alt="" loading="lazy">`:`<span class="ph">${p.ph}</span>`}${p.st?`<span class="st">ongoing</span>`:""}</span><span class="cb"><span class="ct" style="display:block">${p.t}</span><span class="co" style="display:block">${p.one}</span><span class="tags">${p.tags.map(x=>`<span class="tag">${x}</span>`).join("")}</span></span></button>`;
+function qPanel(id){
+  const q=Q[id];
+  return {crumb:`${q.short}`, html:`<div class="eyebrow">Research question</div><h2 id="pTitle" class="qt">${q.text}</h2><p class="lede">${q.lede}</p><div class="cards">${P.filter(p=>p.q===id).map(card).join("")}</div>`};
+}
+function wsPanel(p,q){ const w=p.ws;
+  const lists=L=>(L||[]).map(([h,items])=>`<h3 class="wsh">${h}</h3><ul class="wsl">${items.map(([b,t])=>`<li><b>${b}</b> ${t}</li>`).join("")}</ul>`).join("");
+  const map=w.map?`<h3 class="wsh">${w.map.head}</h3><div class="wsmap"><table><thead><tr>${w.map.cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${w.map.rows.map(r=>`<tr><td>${r[0]}</td><td>${w.map.plain?"":`<span aria-hidden="true">→</span> `}${r[1]}</td></tr>`).join("")}</tbody></table></div>`:"";
+  const legacy=w.items?[[w.head,w.items]]:null;
+  return {crumb:`<button data-open="${p.q}">← ${q.short}</button>`, html:`
+    <div class="eyebrow">${w.kind||"Writing sample"} · ${p.y}${p.st?" · ongoing":""}</div><h2 id="pTitle" class="wst">${w.title}</h2>
+    <p class="wsby">${w.by}</p>
+    <p class="wsintro">${w.intro}</p>
+    ${w.demo?`<h3 class="wsh" style="margin-top:24px">${w.demo.head}</h3><div class="wsdemo"><div class="phone"><video src="${w.demo.src}" poster="${w.demo.poster}" controls playsinline muted preload="metadata" controlslist="nodownload noplaybackrate" disablepictureinpicture oncontextmenu="return false"></video></div><ol class="chap">${w.demo.chapters.map(([t,l,d],i)=>`<li><button data-seek="${t}" data-i="${i}"><span class="tc">${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}</span><span><b>${l}</b><span class="cd">${d}</span></span></button></li>`).join("")}</ol></div>`:""}${w.video?`<figure class="hero wsfig wsvid${w.video.square?" sq":""}"><video src="${w.video.src}" poster="${w.video.poster}" controls playsinline preload="metadata" controlslist="nodownload noplaybackrate" disablepictureinpicture oncontextmenu="return false"></video><figcaption>${w.video.cap}</figcaption></figure>`:`<figure class="hero wsfig"><img src="${p.img}" alt="${w.cap}"><figcaption>${w.cap}</figcaption></figure>`}
+    ${lists(legacy||w.lists)}${map}${lists(w.lists2)}
+    <dl class="wsr">${w.rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+    ${w.gallery?`<div class="wsgal">${w.gallery.map(([src,c])=>`<figure><img src="${src}" alt="${c}" loading="lazy"><figcaption>${c}</figcaption></figure>`).join("")}</div>`:""}
+    ${w.doc?`<button class="wsbtn" data-doc="${p.id}">${w.label} <span aria-hidden="true">→</span></button>`:""}
+    ${w.links?`<div class="links">${w.links.map(([l,t])=>(typeof t==="string"&&t.startsWith("http"))?`<a class="lk real" href="${t}" target="_blank" rel="noopener">${t.includes("github.com")?"":`<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 5.2v5.6L11 8z" fill="currentColor"/></svg>`}<svg ${t.includes("github.com")?"":"hidden "}viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>${l} <span aria-hidden="true">↗</span></a>`:t==="private"?`<span class="lk priv"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>${l}</span>`:`<span class="lk ${t?"todo":""}">${l}${t?" · to add":" ↗"}</span>`).join("")}</div>`:""}`};
+}
+function projPanel(id){
+  const p=P.find(x=>x.id===id), q=Q[p.q];
+  if(p.ws) return wsPanel(p,q);
+  return {crumb:`<button data-open="${p.q}">← ${q.short}</button>`, html:`
+    <div class="eyebrow">${p.y}${p.st?" · ongoing":""}</div><h2 id="pTitle">${p.t}</h2>
+    <div class="hero">${p.img?`<img src="${p.img}" alt="${p.t}">`:`<div class="ph">${p.ph}</div>`}</div>
+    <div class="three">${p.three.map(([k,v])=>`<div><b>${k}</b>${v}</div>`).join("")}</div>
+    <div class="tags" style="margin:0 0 14px">${p.tags.map(x=>`<span class="tag">${x}</span>`).join("")}</div>
+    ${p.links.length?`<div class="links">${p.links.map(([l,t])=>`<span class="lk ${t?"todo":""}">${l}${t?" · to add":" ↗"}</span>`).join("")}</div>`:""}
+    ${p.note?`<p class="note">${p.note}</p>`:""}
+    ${p.full?`<details class="full"><summary>Full case study <span>question → open questions</span></summary><dl style="margin:0">${p.full.map(([k,v],i)=>`<div class="sec"><dt><i>${i+2}</i>${k}</dt><dd>${v}</dd></div>`).join("")}</dl></details>`:""}`};
+}
+function aboutPanel(){ return {crumb:"About", html:`<div class="eyebrow">About</div><h2 id="pTitle">I build and study <em>interactive systems.</em></h2>
+  <p class="lede">I’m an interaction designer and aspiring HCI researcher finishing my BDes at Emily Carr University. I study how people think, decide and learn with computers, AI and immersive technology.</p>
+  <p class="lede">I’m an immigrant, and learning to live in a new culture is the experience that has shaped me most, as a person and as a researcher. It taught me how much the systems around us decide whether we feel lost or capable, and that people need to choose when to rely on help and when to work things out themselves. It’s why I care about technology that helps people understand and adapt rather than leaving them behind. My current research brings that idea to AI: when AI makes thinking effortless, how do we make sure people still learn? One answer I’m exploring is letting people decide how much of the thinking the AI does.</p>
+  <p class="lede">I look at what people hand over to AI chatbots, and how that affects memory, understanding and critical thinking. The goal is to design AI that supports human thinking rather than replacing it. I’m also drawn to immersive and wearable interfaces as ways to study embodied and emotional experience.</p>
+  <div class="chips"><span class="chip">Human–AI interaction</span><span class="chip">Cognitive offloading</span><span class="chip">XR</span><span class="chip">Tangible interaction</span><span class="chip">Wearables</span></div>
+  <div class="mini"><h3>Currently</h3><p style="margin:0">Research Assistant at Emily Carr University, working on my graduation research on supporting human thinking in AI-assisted work, and applying to research master’s programs in HCI.</p>
+  <h3>Languages</h3><p style="margin:0">English · Persian · French (A2)</p></div>`}; }
+function cvPanel(){ return {crumb:"CV", html:`<div class="eyebrow">CV</div><h2 id="pTitle">Experience</h2>
+  <a class="dl-btn" href="cv/Mahtab_Foroozandeh_CV.pdf" target="_blank" rel="noopener">Download CV (PDF) <span aria-hidden="true">↓</span></a>
+  <div class="mini"><h3>Research</h3><ul class="tl">
+   <li><span class="y">2026–27</span><span>Graduation Research Project<div class="w">Emily Carr · Dr. Manuhuia Barcham, Eugenia Bertulis</div></span></li>
+   <li><span class="y">2026–now</span><span>Design Researcher, Shumka Centre × PsychSafe<div class="w">Emily Carr · Colby May</div></span></li>
+   <li><span class="y">2026</span><span>Volunteer RA, Metacreation Lab for Creative AI<div class="w">Simon Fraser University</div></span></li>
+   <li><span class="y">2025</span><span>Design Researcher, Shumka Centre × Disposal Queen<div class="w">Emily Carr · Colby May, Gill Barros</div></span></li>
+  </ul><h3>Technical</h3><ul class="tl">
+   <li><span class="y">2026</span><span>AI/ML Developer, Persustain<div class="w">ISM Creatives</div></span></li>
+   <li><span class="y">2025</span><span>UX Researcher &amp; Designer, HealthSync AI<div class="w">ISM Creatives</div></span></li>
+  </ul><h3>Education</h3><ul class="tl"><li><span class="y">2023–27</span><span>BDes, Interaction Design<div class="w">Emily Carr University of Art + Design · CGPA 3.7 / 4.0</div></span></li></ul>
+  <h3>Also</h3><ul class="tl"><li><span class="y">2024</span><span>Persian Miniature, Max/MSP<div class="w">End of Year Exhibition, Emily Carr</div></span></li><li><span class="y">2025</span><span>Lead Mentor, FLUI Hackathon<div class="w">Emily Carr Interaction Design</div></span></li></ul></div>`}; }
+function contactPanel(){ return {crumb:"Contact", html:`<div class="eyebrow">Contact</div><h2 id="pTitle">Say <em>hello.</em></h2>
+  <p class="lede">Happy to talk about research, the projects here, or a lab I might join.</p>
+  <ul class="tl"><li><span class="y">Email</span><span><span id="mail" style="font-family:var(--mono);font-size:13.5px">mahforooz81@gmail.com</span><button class="copy" id="copyMail">copy</button></span></li>
+  <li><span class="y">LinkedIn</span><span><a href="https://www.linkedin.com/in/mahtab-foroozandeh/" target="_blank" rel="noopener">linkedin.com/in/mahtab-foroozandeh</a></span></li>
+  <li><span class="y">GitHub</span><span><a href="https://github.com/mahforooz" target="_blank" rel="noopener">github.com/mahforooz</a></span></li>
+  <li><span class="y">Based in</span><span>Burnaby, BC</span></li></ul>`}; }
+
+
+let lastFocus=null;
+function open(id){
+  const v = Q[id]?qPanel(id) : P.some(p=>p.id===id)?projPanel(id) : id==="about"?aboutPanel() : id==="cv"?cvPanel() : id==="contact"?contactPanel() : null;
+  if(!v) return;
+  if($("#ov").hidden) lastFocus=document.activeElement;
+  $("#crumb").innerHTML=v.crumb; $("#pin").innerHTML=v.html; $("#ov").hidden=false; $("#drawer").scrollTop=0;
+  { const pr=P.find(p=>p.id===id); const nm = Q[id]?Q[id].short : pr?pr.t : ({about:"About",cv:"CV",contact:"Contact"})[id]; const kind = Q[id]?"Research area" : pr?"Project":""; $("#scrimTitle").innerHTML=(kind?`<small>${kind}</small>`:"")+nm; }
+  document.body.style.overflow="hidden"; $("#close").focus(); cold();
+  const mc=$("#copyMail"); if(mc) mc.onclick=ev=>{const b=ev.currentTarget;navigator.clipboard.writeText("mahforooz81@gmail.com").then(()=>b.textContent="copied").catch(()=>{const r=document.createRange();r.selectNodeContents($("#mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="selected";});};
+  try{ history.replaceState(null,"","#"+id); }catch(_){}
+}
+function close(){ $("#ov").hidden=true; document.body.style.overflow=""; try{ history.replaceState(null,"",location.pathname+location.search); }catch(_){} if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+document.addEventListener("click",ev=>{
+  const o=ev.target.closest("[data-open]"); if(o){ open(o.dataset.open); return; }
+  const c=ev.target.closest("[data-proj]"); if(c){ open(c.dataset.proj); }
+});
+$("#close").onclick=close; $("#scrim").onclick=close;
+document.addEventListener("keydown",ev=>{ if(ev.key!=="Escape") return; const dv=document.getElementById("docv"); if(dv&&!dv.hidden){ dv.hidden=true; return; } if(!$("#ov").hidden) close(); });
+/* full-screen document viewer: shows the document's pages only, view-only */
+(function(){
+  const dv=document.createElement("div"); dv.id="docv"; dv.hidden=true; dv.setAttribute("role","dialog"); dv.setAttribute("aria-modal","true"); dv.setAttribute("aria-label","Document");
+  dv.innerHTML=`<button class="docx" aria-label="Close document">✕</button><div class="docpages"></div>`;
+  document.body.appendChild(dv);
+  dv.querySelector(".docx").onclick=()=>{ dv.hidden=true; };
+  dv.addEventListener("contextmenu",e=>e.preventDefault()); dv.addEventListener("dragstart",e=>e.preventDefault());
+  document.addEventListener("click",ev=>{ const b=ev.target.closest("[data-doc]"); if(!b) return; const pr=P.find(x=>x.id===b.dataset.doc); if(!pr||!pr.ws.doc) return; const d=pr.ws.doc;
+    dv.querySelector(".docpages").innerHTML=Array.from({length:d.n},(_,i)=>`<img src="${d.dir}/p-${String(i+1).padStart(2,"0")}.webp" alt="Page ${i+1} of ${d.n}" width="1275" height="1650" draggable="false" ${i>1?"loading=\"lazy\"":""}>`).join("");
+    dv.hidden=false; dv.scrollTop=0; dv.querySelector(".docx").focus(); });
+})();
+
+const h=(location.hash||"").slice(1); if(h) open(h);
+addEventListener("hashchange",()=>{ const h2=(location.hash||"").slice(1); if(h2) open(h2); else if(!$("#ov").hidden) close(); });
+
+/* demo chapters: click to jump, highlight the current chapter while playing */
+document.addEventListener("click",ev=>{ const b=ev.target.closest("[data-seek]"); if(!b) return; const box=b.closest(".wsdemo"); const v=box&&box.querySelector("video"); if(!v) return; v.currentTime=+b.dataset.seek; v.play().catch(()=>{}); });
+document.addEventListener("timeupdate",ev=>{ const v=ev.target; if(!(v instanceof HTMLVideoElement)) return; const box=v.closest(".wsdemo"); if(!box) return; let cur=null; box.querySelectorAll("[data-seek]").forEach(b=>{ if(v.currentTime+0.3>=+b.dataset.seek) cur=b; }); box.querySelectorAll("[data-seek]").forEach(b=>b.classList.toggle("on",b===cur)); },true);
+</script>
+</body>
+</html>
